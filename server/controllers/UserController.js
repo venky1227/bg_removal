@@ -28,17 +28,9 @@ const clerkWebhooks = async (req,res) => {
                     photo: data.image_url,
                 }
 
-                try {
-                    await userModel.create(userData);
-                    res.json({ success: true, message: 'User created successfully' });
-                  } catch (error) {
-                    console.error('Error creating user:', error);
-                    res.json({ success: false, message: 'Error creating user' });
-                  }
-          
 
-                // await userModel.create(userData)
-                // res.json({})
+                await userModel.create(userData)
+                res.json({})
 
                 break;
             }
@@ -52,16 +44,8 @@ const clerkWebhooks = async (req,res) => {
                     lastName: data.last_name,
                     photo: data.image_url,
                 }
-                // await userModel.findOneAndUpdate({clerkId:data.id},userData)
-                // res.json({})
-
-                try {
-                    await userModel.findOneAndUpdate({ clerkId: data.id }, userData);
-                    res.json({ success: true, message: 'User updated successfully' });
-                  } catch (error) {
-                    console.error('Error updating user:', error);
-                    res.json({ success: false, message: 'Error updating user' });
-                  }
+                await userModel.findOneAndUpdate({clerkId:data.id},userData)
+                res.json({})
 
                 break;
             }
