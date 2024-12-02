@@ -5,6 +5,7 @@ import userRouter from './routes/userRoutes.js';
 import connectDB from './configs/mongodb.js';
 // import imageRouter from './routes/imageRoutes.js';
 
+console.log(process.env.MONGO_URI)
 // App Config
 const PORT = process.env.PORT || 4000
 const app = express();
