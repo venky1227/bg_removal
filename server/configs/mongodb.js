@@ -14,12 +14,12 @@ import mongoose from "mongoose";
 
 const connectDB = async () => {
   try {
-    const mongoUri = process.env.MONGO_URI;
-    if (!mongoUri) {
+    const MONGO_URI = process.env.MONGO_URI;
+    if (!MONGO_URI) {
       throw new Error('MONGO_URI environment variable is not set');
     }
     
-    await mongoose.connect(mongoUri + '/bg-removal', {
+    await mongoose.connect(MONGO_URI + '/bg-removal', {
       useNewUrlParser: true,
       useUnifiedTopology: true,
     });
