@@ -9,17 +9,7 @@
                     "dist/**"
                 ]
             }
-        },
-
-        {
-            "rewrites": [
-              {
-                "source": "/:path*",
-                "destination": "/index.html"
-              }
-            ]
-          }
-          
+        }
     ],
     "routes": [
         {
